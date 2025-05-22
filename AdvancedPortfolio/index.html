@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gorgees Esttaifan Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+<style>
+
+</style>
+  </head>
+  <body class="SiteBackground">
+    <nav class="HeaderNavigation">
+      <a class="nav-link active" href="#WelcomeSection">Home</a>
+      <a class="nav-link" href="#GallerySection">Work</a>
+      <a class="nav-link" href="#BioSection">Story</a>
+      <a class="nav-link" href="#CodeSection">Code</a>
+      <a onclick="showContactForm()" ondblclick="hideContactForm()" class="nav-link contact-trigger">Contact</a>
+    </nav>
+
+    <section id="WelcomeSection">
+      <video autoplay muted loop id="BgVideoPlayer">
+        <source src="https://cdn.pixabay.com/video/2015/10/27/1192-143842659_tiny.mp4" type="video/mp4" />
+        Your browser does not support HTML5 video.
+      </video>
+    </section>
+
+    <div class="HeroTextContainer">
+      <h1 class="light-text">Hii👋🏻, Gorgees Esttaifan Here!.</h1>
+      <strong>
+        <p class="centered-text intro-quote">
+          Welcome to my new advanced Portfolio.<br />
+          I'm a Software Development Student how loves coding and hope to be able to help you! <br /><br />
+          Take a look in my portfolio and contact me!.
+        </p>
+      </strong>
+    </div>
+
+    <section id="GallerySection">
+      <div class="GalleryBackground">
+        <h2>Featured Work</h2>
+        <div class="SlideshowWrapper">
+          <div class="SlideItem fade-effect" style="display: block">
+            <img class="GalleryImage"
+              src="https://cdn.pixabay.com/photo/2020/02/11/19/56/laptop-4840790_1280.jpg"
+              alt="Creative workspace"
+            />
+            <div class="caption">Let’s collaborate on your next big idea.</div>
+          </div>
+          <div class="SlideItem fade-effect" style="display: none">
+            <img class="GalleryImage"
+              src="https://cdn.pixabay.com/photo/2020/02/11/19/56/laptop-4840790_1280.jpg"
+              alt="Web languages"
+            />
+            <div class="caption">Fluent in HTML, CSS & JavaScript — the essentials of the modern web.</div>
+          </div>
+          <div class="SlideItem fade-effect" style="display: none">
+            <img class="GalleryImage"
+              src="https://cdn.pixabay.com/photo/2020/02/11/19/56/laptop-4840790_1280.jpg"
+              alt="Python development"
+            />
+            <div class="caption">Solving problems with Python, one elegant script at a time.</div>
+          </div>
+          <div class="SlideItem fade-effect" style="display: none">
+            <img class="GalleryImage"
+              src="https://cdn.pixabay.com/photo/2020/02/11/19/56/laptop-4840790_1280.jpg"
+              alt="Contact Me"
+            />
+            <div class="caption">
+              <a class="light-text contact-trigger" onclick="showContactForm()">Connect with me and lets work together!</a>
+            </div>
+          </div>
+          <a class="PrevButton" onclick="navigateSlides(-1)">&#10094;</a>
+          <a class="NextButton" onclick="navigateSlides(1)">&#10095;</a>
+        </div>
+        <br />
+        <div style="text-align: center">
+          <span class="IndicatorDot active" onclick="selectSlide(1)"></span>
+          <span class="IndicatorDot" onclick="selectSlide(2)"></span>
+          <span class="IndicatorDot" onclick="selectSlide(3)"></span>
+          <span class="IndicatorDot" onclick="selectSlide(4)"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="ContentRow" id="BioSection">
+      <div class="InfoColumn TextColumn">
+        <h1>About Me</h1>
+        <p>
+          I'm a very hard working and multi tasking student who's very good at development
+          <br /><br />
+          <a onclick="showContactForm()" class="contact-trigger">Contact me</a> and let's work.
+        </p>
+      </div>
+      <div class="InfoColumn ImageColumn">
+        <img src="https://cdn.pixabay.com/photo/2016/11/22/21/26/notebook-1850613_1280.jpg"
+          alt="working" />
+      </div>
+    </section>
+
+    <section class="ContentRow" id="CodeSection">
+      <div class="InfoColumn TextColumn">
+        <h1>Code & Projects</h1>
+        <p>Explore a sample of my open source work and personal builds:</p>
+        <p class="centered-text">
+          <a href="https://github.com/GorgeesEsttaifan" target="_blank" rel="noopener noreferrer">Visit My GitHub</a>
+        </p>
+      </div>
+      <div class="InfoColumn ImageColumn">
+        <a href="https://github.com/GorgeesEsttaifan" target="_blank" rel="noopener noreferrer">
+          <img src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Logo.png" alt="GitHub Logo" />
+        </a>
+      </div>
+    </section>
+
+    <section id="ContactFormArea">
+      <button onclick="showContactForm()" class="ContactPopupButton">GET IN TOUCH</button>
+      <div class="ModalForm" id="ContactModalContainer" ondblclick="hideContactForm()" style="display: none">
+        <form action="https://formspree.io/f/your_form_id" method="POST" class="ModalContent">
+          <h1>Let's Talk</h1>
+          <label for="contact_name"><b>Name</b></label>
+          <input type="text" placeholder="Your Name" name="name" id="contact_name" required />
+          <label for="contact_phone"><b>Phone (Optional)</b></label>
+          <input type="tel" placeholder="Your Phone Number" name="phone" id="contact_phone" />
+          <label for="contact_email"><b>Email</b></label>
+          <input type="email" placeholder="Your Email Address" name="email" id="contact_email" required />
+          <label for="contact_message"><b>Message</b></label>
+          <textarea placeholder="Your Message" name="message" id="contact_message" required rows="4"></textarea>
+          <button type="submit" class="SubmitButton">SEND</button>
+          <button type="button" class="CloseButton" onclick="hideContactForm()">CLOSE</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="SiteFooter">
+      <p class="centered-text">
+        &copy; 2025
+        <a href="https://github.com/GorgeesEsttaifan" target="_blank" rel="noopener noreferrer">Gorgees Esttaifan</a> |
+        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
